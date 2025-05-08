@@ -6,7 +6,7 @@ sudo mv ./kind /usr/local/bin/kind
 
 ### KIND Cluster initialisieren
 
-kind create cluster istio-lab
+kind create cluster -n istio-lab
 
 ### Istio install
 
