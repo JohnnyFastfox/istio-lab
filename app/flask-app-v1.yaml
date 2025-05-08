@@ -20,6 +20,7 @@ spec:
       containers:
         - name: flask-app
           image: flask-app:v1
+          imagePullPolicy: Never
           env:
             - name: VERSION
               value: "v1"
