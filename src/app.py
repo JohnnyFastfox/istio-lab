@@ -1,12 +1,4 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: httpbin-app-code
-  namespace: default
-
-data:
-  app.py: |
-    from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify
     import os
 
     app = Flask(__name__)

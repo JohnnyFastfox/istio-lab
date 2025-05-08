@@ -1,19 +1,19 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: httpbin-virtualservice
+  name: flask-app-virtualservice
 spec:
   hosts:
     - "*"
   gateways:
-    - httpbin-gateway
+    - flask-app-gateway
   http:
     - route:
         - destination:
-            host: httpbin-service
+            host: flask-app-service
             subset: v1
           weight: 80
         - destination:
-            host: httpbin-service
+            host: flask-app-service
             subset: v2
           weight: 20
