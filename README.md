@@ -16,7 +16,7 @@ curl -L https://istio.io/downloadIstio | sh -
 
 cd istio-1.25.2 
 
-export PATH=$PWD/bin:$PATH
+sudo mv ./istioctl /usr/local/bin/
 
 istioctl install --set profile=default -y
 
