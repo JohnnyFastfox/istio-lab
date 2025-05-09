@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: jonasjoachim/flask-service:054b96dc68023c5dc060487e3ef0a7e46732c43a
+          image: jonasjoachim/flask-service:latest
           env:
             - name: VERSION
               value: "v1"
