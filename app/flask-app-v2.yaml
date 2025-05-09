@@ -19,6 +19,13 @@ spec:
     spec:
       containers:
         - name: flask-app
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           image: jonasjoachim/flask-service:latest
           env:
             - name: VERSION
