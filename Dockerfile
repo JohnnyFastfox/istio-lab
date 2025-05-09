@@ -9,8 +9,5 @@ COPY ./src /app/
 # Anwendungscode ins Image kopieren
 # Netzwerkport 5000 dokumentieren (optional)
 EXPOSE 80
-# Container-Startbefehl: Flask-App ausführen
-RUN adduser -D appuser
-USER appuser
-
+# Container-Startbefehl: Flask-App ausführens
 CMD ["python", "app.py"]
