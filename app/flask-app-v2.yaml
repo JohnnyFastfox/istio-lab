@@ -19,10 +19,11 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: flask-app:v1
-          imagePullPolicy: Never
+          image: jonasjoachim/flask-service:latest
           env:
             - name: VERSION
               value: "v2"
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: flask-app-secret
