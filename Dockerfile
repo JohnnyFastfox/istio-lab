@@ -10,4 +10,7 @@ COPY ./src /app/
 # Netzwerkport 5000 dokumentieren (optional)
 EXPOSE 80
 # Container-Startbefehl: Flask-App ausführen
+RUN adduser -D appuser
+USER appuser
+
 CMD ["python", "app.py"]
