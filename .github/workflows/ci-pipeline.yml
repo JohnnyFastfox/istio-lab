@@ -27,14 +27,14 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ COMMIT-SHA }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ github.sha }}
           load: true  # Load image into local Docker for scanning
 
       - name: Scan image with Trivy
         uses: aquasecurity/trivy-action@0.11.0
         with:
           scan-type: image
-          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ COMMIT-SHA }}
+          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ github.sha }}
           severity: CRITICAL,HIGH
           ignore-unfixed: true
           exit-code: 1
@@ -45,4 +45,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ COMMIT-SHA }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-service:${{ github.sha }}
